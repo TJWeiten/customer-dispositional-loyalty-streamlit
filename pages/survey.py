@@ -7,6 +7,7 @@ from CDL import CDL
 
 
 # if the home page has not yet been viewed in this session, take them to the introduction page
+st.set_page_config(page_title="CDL — Survey", initial_sidebar_state="collapsed")
 if "intro_viewed" not in st.session_state:
     switch_page("home")
 

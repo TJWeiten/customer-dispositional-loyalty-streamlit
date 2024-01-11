@@ -6,7 +6,7 @@ from CDL import CDL
 
 
 # initialize the CDL object in the session state
-st.set_page_config(initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Customer Dispositional Loyalty", initial_sidebar_state="collapsed")
 if "intro_viewed" not in st.session_state:
     st.session_state.intro_viewed = True
     st.session_state.survey = CDL()
