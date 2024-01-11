@@ -1,2 +1,2 @@
 streamlit>=1.29.0
-streamlist-extras>=0.3.6
+streamlit-extras>=0.3.6
