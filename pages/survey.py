@@ -3,7 +3,7 @@ from streamlit_extras.switch_page_button import switch_page
 from statistics import mean
 
 from styles import css_overrides
-from CDL import CDL
+from CDL import SurveyCDL
 
 
 # if the home page has not yet been viewed in this session, take them to the introduction page
@@ -13,6 +13,9 @@ if "intro_viewed" not in st.session_state:
 
 
 def main():
+    """
+    Build the DOM of the survey page.
+    """
     css_overrides()
     survey = st.session_state.survey
 
@@ -25,19 +28,19 @@ def main():
         survey_results(survey)
 
 
-def survey_results(survey: CDL):
+def survey_results(survey: SurveyCDL):
     """
     Displays the results of the survey.
 
     Args:
-        survey (CDL): The survey object that contains details about the user's progress through the survey.
+        survey (SurveyCDL): The survey object that contains details about the user's progress through the survey.
     """
 
     # z-score categories
     cdl_categories = ["very low", "low", "slightly below average", "average", "slightly above average", "high", "very high"]
 
     cdl_mean = mean(survey.survey_answers)
-    z_score = round((cdl_mean - CDL.CDL_MEAN) / CDL.CDL_STD_DEV, 2)
+    z_score = round((cdl_mean - SurveyCDL.CDL_MEAN) / SurveyCDL.CDL_STD_DEV, 2)
 
     # pick an index in the middle of the list and adjust by z-score
     z_score_index = (len(cdl_categories) // 2) + int(z_score/0.5) 
@@ -64,7 +67,7 @@ def survey_results(survey: CDL):
     
     # return the user to the home page and reset state
     if st.button("Return to the home page!", type="primary", use_container_width = True):
-        st.session_state.survey = CDL()
+        st.session_state.survey = SurveyCDL()
         switch_page("home")
 
 

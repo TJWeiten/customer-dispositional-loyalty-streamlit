@@ -2,17 +2,20 @@ import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 
 from styles import css_overrides
-from CDL import CDL
+from CDL import SurveyCDL
 
 
 # initialize the CDL object in the session state
 st.set_page_config(page_title="Customer Dispositional Loyalty", initial_sidebar_state="collapsed")
 if "intro_viewed" not in st.session_state:
     st.session_state.intro_viewed = True
-    st.session_state.survey = CDL()
+    st.session_state.survey = SurveyCDL()
 
 
 def main():
+    """
+    Build the DOM of the home page.
+    """
     css_overrides()
     home_content()
 

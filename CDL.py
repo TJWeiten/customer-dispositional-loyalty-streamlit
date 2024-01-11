@@ -2,7 +2,7 @@ import streamlit as st
 import random
 
 
-class CDL:
+class SurveyCDL:
     """
     A class for managing the user's progress through the CDL survey.
     """
@@ -10,7 +10,11 @@ class CDL:
     CDL_MEAN = 3.87
     CDL_STD_DEV = 0.66
 
-    def __init__(self):
+    def __init__(self: object):
+        """
+        Initialize the survey with shuffled questions and reset the current question and answers.
+        """
+        
         self.survey_questions = [
             "Generally, I am someone who likes to be a regular customer of a company or service.",
             "Generally, I am someone who wants to be a steady customer of the same company or service.",
@@ -22,7 +26,7 @@ class CDL:
         random.shuffle(self.survey_questions) # shuffle the survey each time it is taken
 
         self.current_question = 0
-        self.survey_answers = [0 for _ in range(len(self.survey_questions))]
+        self.survey_answers = [0] * len(self.survey_questions)
 
 
     def build_survey_question(self, question_index: int):
@@ -47,7 +51,7 @@ class CDL:
         with col2:
             answered = st.button(
                 "Disagree", 
-                on_click=self.answer_btn_callback, args=(question_index, 2), 
+                on_click = self.answer_btn_callback, args = (question_index, 2), 
                 use_container_width = True
             )
         with col3:
