@@ -36,31 +36,40 @@ def home_content():
 
     st.markdown(
         """
-        <p class='pseudo-h3'>Overview</h3>
+        <p class='pseudo-h3'>Overview</p>
 
         <p class='justified'>
-        Despite the importance of customer loyalty and considerable research attention accorded to it, 
-        findings concerning the origins of loyalty are inconsistent. 
-        We reason that loyalty stems from not only firm-specific antecedents, 
-        but also a customer-specific trait that we name <b>dispositional loyalty</b>. 
-        </p>
-
-        <p class='justified'>
-        In our research project, we not only define dispositional loyalty, 
-        but also develop and validate a scale for its measurement.
+        <em><b>Customer loyalty</b></em> is a “collection of attitudes aligned with a series of purchase behaviors 
+        that systematically favor one entity over competing entities” (Watson et al. 2015, p. 733).
         </p>
         
         <p class='justified'>
-        In conceptualizing dispositional loyalty, we extend the discipline's knowledge of brand loyalty. 
-        Unlike the attitudinal and behavioral dimensions of loyalty, which are specific to a firm/brand, 
-        dispositional loyalty is generalizable across consumption domains 
-        and can be useful for market research and consulting firms in segmenting markets.
+        While academics and practitioners have defined and measured a customer's loyalty 
+        in terms of their attitudes and behaviors, we reason that loyalty is also a trait or disposition variable. 
+        That is, a customer has a dispositional loyalty toward marketplace offerings. 
+        Formally, we define <em><b>customer dispositional loyalty</b></em> as a stable disposition that drives some 
+        customers to be more inclined to commit to a brand, product, or service, and remain committed to it, 
+        despite situational factors that might otherwise lead to switching behavior.
+        </p>
+        
+        <p class='justified'>
+        This website accompanies our research manuscript, 
+        which conceptualizes customer dispositional loyalty, 
+        provides a six-item scale to measure an individual customer's dispositional loyalty, 
+        and offers experimental evidence on the effect of a customer's dispositional loyalty 
+        on their likelihood of forgiving a transgressor brand.
+        </p>
+        
+        <p class='justified'>
+        You can use this website to 
+        <b>(1)</b> answer the six items that comprise the dispositional loyalty scale and 
+        <b>(2)</b> score yourself on dispositional loyalty.
         </p>
 
-        <p class='justified'>
-        We present this accomanying website to provide a brief overview of our research project 
-        and to allow you to take the scale we developed to measure dispositional loyalty.
-        </p>
+        <b>References:</b>
+
+        Watson, George F, Joshua T Beck, Conor M Henderson, and Robert W Palmatier (2015), "Building, measuring, and profiting from customer loyalty," Journal of the Academy of Marketing Science, 43 (6), 790-825. https://link.springer.com/article/10.1007/s11747-015-0439-4
+
         <hr>
         """,
         unsafe_allow_html = True
